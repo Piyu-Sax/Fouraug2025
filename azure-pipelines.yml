@@ -1,0 +1,22 @@
+trigger:
+- none
+
+pool:
+  Raveena Tondon
+
+steps:
+- task: TerraformInstaller@1
+  displayName: terraform installer
+  inputs:
+   terraformVersion: latest
+
+- task: TerraformTask@5
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    backendServiceArm: 'xyxyxyxy'
+    backendAzureRmResourceGroupName: 'ILU-VLU'
+    backendAzureRmStorageAccountName: 'piyustg'
+    backendAzureRmContainerName: 'piyucontainer'
+    backendAzureRmKey: 'piyush.tfstate'
+  
